@@ -27,5 +27,9 @@ public class Animaciones : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         animator.SetBool("Saltar", false);
+        if(collision.transform.tag == "Enemigo")
+        {
+            GameManager.Instancia.Perder();
+        }
     }
 }
