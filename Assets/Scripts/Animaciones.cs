@@ -6,6 +6,7 @@ public class Animaciones : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float alturasalto;
+    [SerializeField] AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +22,7 @@ public class Animaciones : MonoBehaviour
         {
             animator.SetBool("Saltar", true);
             rb.AddForce(Vector2.up * alturasalto);
+            audioSource.Play();
         }
     }
 

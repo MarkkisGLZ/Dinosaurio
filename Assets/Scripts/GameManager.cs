@@ -1,5 +1,6 @@
 using Mono.Cecil;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         mejorPuntuacion = PlayerPrefs.GetInt("mejorPuntuacion");
-        guardarTexto.SetActive(false);
+        //guardarTexto.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,10 +48,12 @@ public class GameManager : MonoBehaviour
     public void Perder()
     {
         gameObject.SetActive(false);
-        boton.SetActive(true);
+        //boton.SetActive(true);
+        SceneManager.LoadScene("GAMEOVER");
     }
     public void ReiniciarJuego()
     {
+      
         puntuacionActual = 0;
         gameObject.SetActive(true);
         boton.SetActive(false);
